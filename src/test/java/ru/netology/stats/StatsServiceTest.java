@@ -60,7 +60,7 @@ public class StatsServiceTest {
     public void shouldMonthsSalesMoreAvg() {
         StatsService service = new StatsService();
         long[] sales = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
-        int actual = service.monthsSalesLessAvg(sales);
+        int actual = service.monthsSalesMoreAvg(sales);
         int expected = 5;
 
         Assertions.assertEquals(expected, actual);
