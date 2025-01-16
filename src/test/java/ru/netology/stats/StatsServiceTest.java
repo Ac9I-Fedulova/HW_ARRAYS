@@ -6,7 +6,7 @@ import org.junit.jupiter.api.Test;
 public class StatsServiceTest {
 
     @Test
-    public void sumAllSales() {
+    public void shouldSumAllSales() {
         StatsService service = new StatsService();
         long[] sales = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
         long actual = service.sumAllSales(sales);
@@ -16,17 +16,17 @@ public class StatsServiceTest {
     }
 
     @Test
-    public void averageSumSalesInMonth() {
+    public void shouldAvgSumSalesInMonth() {
         StatsService service = new StatsService();
         long[] sales = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
-        long actual = service.averageSumSalesInMonth(sales);
+        long actual = service.avgSumSalesInMonth(sales);
         long expected = 15;
 
         Assertions.assertEquals(expected, actual);
     }
 
     @Test
-    public void monthWithMaxSales() {
+    public void shouldMonthWithMaxSales() {
         StatsService service = new StatsService();
         long[] sales = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
         int actual = service.maxSales(sales);
@@ -36,7 +36,7 @@ public class StatsServiceTest {
     }
 
     @Test
-    public void monthWithMinSales() {
+    public void shouldMonthWithMinSales() {
         StatsService service = new StatsService();
         long[] sales = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
         int actual = service.minSales(sales);
@@ -46,10 +46,10 @@ public class StatsServiceTest {
     }
 
     @Test
-    public void monthsSalesLessAverage() {
+    public void shouldMonthsSalesLessAverage() {
         StatsService service = new StatsService();
         long[] sales = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
-        int actual = service.monthsSalesLessAverage(sales);
+        int actual = service.monthsSalesLessAvg(sales);
         int expected = 5;
 
         Assertions.assertEquals(expected, actual);
@@ -57,10 +57,10 @@ public class StatsServiceTest {
     }
 
     @Test
-    public void monthsSalesMoreAverage() {
+    public void shouldMonthsSalesMoreAvg() {
         StatsService service = new StatsService();
         long[] sales = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
-        int actual = service.monthsSalesLessAverage(sales);
+        int actual = service.monthsSalesLessAvg(sales);
         int expected = 5;
 
         Assertions.assertEquals(expected, actual);

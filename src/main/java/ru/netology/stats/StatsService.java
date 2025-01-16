@@ -11,9 +11,9 @@ public class StatsService {
         return sum;
     }
 
-    public long averageSumSalesInMonth(long[] sales) {
-
-        return sumAllSales(sales) / sales.length;
+    public long avgSumSalesInMonth(long[] sales) {
+        long avgSum = sumAllSales(sales) / sales.length;
+        return avgSum;
     }
 
     public int maxSales(long[] sales) {
@@ -40,12 +40,12 @@ public class StatsService {
         return minMonth + 1;
     }
 
-    public int monthsSalesLessAverage(long[] sales) {
+    public int monthsSalesLessAvg(long[] sales) {
         int lessManths = 0;
-        long average = averageSumSalesInMonth(sales);
+        long avg = avgSumSalesInMonth(sales);
 
         for (int i = 0; i < sales.length; i++) {
-            if (sales[i] < average) {
+            if (sales[i] < avg) {
                 lessManths++;
             }
         }
@@ -53,12 +53,12 @@ public class StatsService {
 
     }
 
-    public int monthsSalesMoreAverage(long[] sales) {
+    public int monthsSalesMoreAvg(long[] sales) {
         int moreManths = 0;
-        long average = averageSumSalesInMonth(sales);
+        long avg = avgSumSalesInMonth(sales);
 
         for (int i = 0; i < sales.length; i++) {
-            if (sales[i] < average) {
+            if (sales[i] > avg) {
                 moreManths++;
             }
         }
